@@ -1,18 +1,20 @@
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import Application, CommandHandler, MessageHandler
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, WebAppInfo
+from telegram.ext import Application, CommandHandler, ContextTypes
 
 
-def start(update, context):
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [
             InlineKeyboardButton(
                 "Open Mini App",
-                url="https://maxwell-oroark.github.io/telegram-mini-app",
+                web_app=WebAppInfo(
+                    url="https://maxwell-oroark.github.io/telegram-mini-app"
+                ),
             )
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    update.message.reply_text(
+    await update.message.reply_text(
         "Click the button below to open the Mini App:", reply_markup=reply_markup
     )
 
