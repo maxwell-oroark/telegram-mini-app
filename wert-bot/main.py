@@ -1,6 +1,8 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update, WebAppInfo
 from telegram.ext import Application, CommandHandler, ContextTypes
 
+PARTNER_ID = "01HXW2J8YDH61DJR71JGRHGWTS"
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
@@ -8,7 +10,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             InlineKeyboardButton(
                 "Open Mini App",
                 web_app=WebAppInfo(
-                    url="https://maxwell-oroark.github.io/telegram-mini-app"
+                    url=f"https://sandbox.wert.io/{PARTNER_ID}/widget/?click_id=34dc984f-1d0a-4b44-8ac4-5800d1401537&commodity=ETH&network=sepolia&commodities=%5B%7B%22commodity%22%3A%22ETH%22,%22network%22%3A%22sepolia%22%7D,%7B%22commodity%22%3A%22MATIC%22,%22network%22%3A%22amoy%22%7D%5D&widget_layout_mode=Modal&commodity_id=eth_sepolia.simple.ethereum"
                 ),
             )
         ]
