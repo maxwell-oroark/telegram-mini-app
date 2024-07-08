@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const wertWidget = new WertWidget({
+  const wertWidget = new window.WertWidget({
     partner_id: "01HXW2J8YDH61DJR71JGRHGWTS",
     container_id: "wert-widget-container",
     origin: "https://widget.wert.io", // or use 'https://sandbox.wert.io' for testing
